@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from appcoder.models import Curso
 from django.http import HttpResponse
+from django.shortcuts import render
+
 # Create your views here.
 
 def listado_cursos(request):
@@ -15,7 +17,7 @@ def listado_cursos(request):
     return HttpResponse(cadena_respuesta)
 
 def inicio(request):
-    return HttpResponse('Estas en el inicio')
+    return render(request, 'appcoder/index.html')
 
 def cursos(request):
     return HttpResponse('Estas en cursos')
