@@ -1,0 +1,11 @@
+{% extends 'appcoder/base.html' %}
+{% block contenido %}
+<h1>Desafios Entregables</h1>
+<ul>
+    {% for entregable in object_list %}
+    <li>{{entregable.nombre}}</li> <a href="{% url 'coder-entregables-detail' entregable.id %}">Detalle</a>
+    <a href="{% url 'coder-entregables-update' entregable.id %}">Actualizar</a>
+    <a href="{% url 'coder-entregables-delete' entregable.id %}">borrar</a>
+    {% endfor %}
+</ul>
+{% endblock contenido %}
